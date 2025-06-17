@@ -2,8 +2,17 @@
 
 **RoundaboutHD** is a comprehensive, high-resolution multi-camera vehicle tracking (MCVT) dataset captured in a real-world roundabout scenario. It is designed to support the development and benchmarking of object detection, single-camera tracking (SCT), and multi-camera vehicle tracking (MCVT) algorithms in urban environments with nonlinear motion and frequent occlusions.
 
-![RoundaboutHD Example](image.png)
+<p align="center">
+    <img src="image.png" alt="RoundaboutHD Example" width="400"/>
+</p>
+
+
+## Dataset Access
+
+To request access to the dataset, please email your **full name** and **institutional affiliation** to: **yl4300@bath.ac.uk**. The dataset is available for **non-commercial research purposes only**. It will also be published through the **University of Bath Research Data Archive** in the near future.
+
 ---
+
 
 ## Dataset Description
 
@@ -14,16 +23,6 @@ RoundaboutHD provides **40 minutes of fully annotated video footage** recorded f
 - **Multiple exits and intersections** between cameras
 
 This makes RoundaboutHD a challenging yet realistic benchmark for evaluating vehicle tracking performance in smart city applications.
-
----
-
-## Dataset Access
-
-To request access to the dataset, please email your **full name** and **institutional affiliation** to:
-
-**yl4300@bath.ac.uk**
-
-The dataset is available for **non-commercial research purposes only**. It will also be published through the **University of Bath Research Data Archive** in the near future.
 
 ---
 
@@ -66,8 +65,7 @@ Each line in the prediction/ground-truth file should follow this format:
 - `xmin`, `ymin`, `width`, `height`: Bounding box coordinates (pixels)
 - `xworld`, `yworld`: GPS/world coordinates of the object (optional)
 
-> *Note: `xworld` and `yworld` are not required for evaluation, but including them is recommended for future extensions.*
-
+> *Note: The value of `xworld` and `yworld` do not count into the evaluation, you can use the value -1 as placehold.
 ---
 
 ### Single-Camera Tracking Evaluation
@@ -116,11 +114,3 @@ If you use **RoundaboutHD** in your research, please cite the following:
 > *RoundaboutHD: A High-Resolution Benchmark Dataset for Real-World Multi-Camera Vehicle Tracking*  
 > arXiv preprint arXiv:XXXX.XXXXX, 2025.  
 > [URL to be updated after arXiv submission]
-
----
-
-## Contact
-
-For questions or collaboration inquiries, feel free to reach out:  
-**yl4300@bath.ac.uk**
-
