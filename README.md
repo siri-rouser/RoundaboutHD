@@ -70,19 +70,22 @@ Each line in the prediction/ground-truth file should follow this format:
 
 ---
 
-#### Single-Camera Tracking Evaluation
+### Single-Camera Tracking Evaluation
 
 Use the following command:
 
 ```bash
 python eval_det.py <prediction_file> <ground_truth_file>
 ```
+Each line in the prediction/ground-truth file should follow this format:
+```
 <frame_id> <obj_id> <xmin> <ymin> <xmax> <ymax>
+```
 
 **Descriptions:**
 The definition of each item is as same as the multi-camera tracking format.
 
-#### Object Detection Evaluation
+### Object Detection Evaluation
 Use the following command:
 
 ```bash
