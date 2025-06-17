@@ -15,8 +15,6 @@ RoundaboutHD provides **40 minutes of fully annotated video footage** recorded f
 
 This makes RoundaboutHD a challenging yet realistic benchmark for evaluating vehicle tracking performance in smart city applications.
 
-
-
 ---
 
 ## Dataset Access
@@ -64,7 +62,7 @@ Each line in the prediction/ground-truth file should follow this format:
 
 - `camera_id`: Integer identifier (1–4 in RoundaboutHD)
 - `obj_id`: Object ID (positive integer, consistent across cameras)
-- `frame_id`: Frame number (starting at 1)
+- `frame_id`: Frame number (starting at 0)
 - `xmin`, `ymin`, `width`, `height`: Bounding box coordinates (pixels)
 - `xworld`, `yworld`: GPS/world coordinates of the object (optional)
 
@@ -72,18 +70,28 @@ Each line in the prediction/ground-truth file should follow this format:
 
 ---
 
-### Single-Camera Tracking Evaluation
+#### Single-Camera Tracking Evaluation
 
+Use the following command:
+
+```bash
+python eval_det.py <prediction_file> <ground_truth_file>
+```
+<frame_id> <obj_id> <xmin> <ymin> <xmax> <ymax>
+
+**Descriptions:**
+The definition of each item is as same as the multi-camera tracking format.
+
+#### Object Detection Evaluation
 Use the following command:
 
 ```bash
 python eval_sct.py <prediction_directory> <ground_truth_directory>
 ```
-
-Each directory should contain multiple `.txt` files named by frame:
+Each directory should contain multiple `.txt` files named by frame with format f'img{frame_id:06d}.txt', example as below:
 
 ```
-img000001.txt, img000002.txt, ...
+img000000.txt, img000001.txt, ...
 ```
 
 Each file must contain object detections in the format:
@@ -91,6 +99,9 @@ Each file must contain object detections in the format:
 ```
 <class_id> <xmin> <ymin> <xmax> <ymax>
 ```
+**Descriptions:**
+`class_id` corresponds to the category names pre-defined in the COCO dataset.
+> *Note: The value of `class_id` do not influence the results for object detection evaluation.
 
 ---
 
@@ -98,7 +109,7 @@ Each file must contain object detections in the format:
 
 If you use **RoundaboutHD** in your research, please cite the following:
 
-> **Yuqiang Lin**, **Li Gan**, **Mingxuan Sui**, and **Nick Hawes**  
+> **Yuqiang Lin**, **Sam Lockyer**, **Mingxuan Sui**, and **Nic Zhang**  
 > *RoundaboutHD: A High-Resolution Benchmark Dataset for Real-World Multi-Camera Vehicle Tracking*  
 > arXiv preprint arXiv:XXXX.XXXXX, 2025.  
 > [URL to be updated after arXiv submission]
