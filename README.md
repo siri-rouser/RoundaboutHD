@@ -3,7 +3,7 @@
 **RoundaboutHD** is a comprehensive, high-resolution multi-camera vehicle tracking (MCVT) dataset captured in a real-world roundabout scenario. It is designed to support the development and benchmarking of object detection, single-camera tracking (SCT), and multi-camera vehicle tracking (MCVT) algorithms in urban environments with nonlinear motion and frequent occlusions.
 
 <p align="center">
-    <img src="image.png" alt="RoundaboutHD Example" width="400"/>
+    <img src="layout.jpg" alt="RoundaboutHD Example" width="400"/>
 </p>
 
 
@@ -28,12 +28,37 @@ This makes RoundaboutHD a challenging yet realistic benchmark for evaluating veh
 
 ## Dataset Contents
 
-The dataset includes:
-
-- **Labeled video footage**
-- **Object detection results**
-- **Single-camera tracking (SCT) results**
-- **Multi-camera tracking (MCVT) results**
+The dataset structure:
+```
+RoundaboutHD/
+├── imagesc001/  ← Same structure applies to imagesc002, imagesc003, imagesc004
+│   ├── detection/
+│   │   ├── labels_GT.zip/
+│   │   │   ├── img000000.txt
+│   │   │   ├── ...
+│   │   │   └── img008999.txt  # Total: 9000 files
+│   │   ├── labels_test.zip/
+│   │   └── labels_xy.zip/
+│   ├── SCT/
+│   │   └── imagesc001_SCT_GT.txt
+│   └── video.mp4
+├── imagesc002/
+├── imagesc003/
+├── imagesc004/
+├── ReID_subset/
+│   └── ReID_subset.zip/
+│       ├── query_images/
+│       ├── test_images/
+│       └── train_images/
+└── Multi_CAM_Ground_Truth.txt
+```
+In this dataset, it contains:
+- **Labeled video footage** 
+- **Object detection Ground Turth**
+- **Single-camera tracking (SCT) Ground Turth**
+- **RoundaboutHD image-based ReID subset**
+- **Image-based ReID Ground Turth**
+- **Multi-camera tracking (MCVT) Ground Turth**
 - **Evaluation scripts and label format documentation**
 
 ---
