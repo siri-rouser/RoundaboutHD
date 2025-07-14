@@ -1,4 +1,4 @@
-# RoundaboutHD
+# RoundaboutHD:High-Resolution Real-World Urban Environment Benchmark for Multi-Camera Vehicle Tracking
 
 **RoundaboutHD** is a comprehensive, high-resolution multi-camera vehicle tracking (MCVT) dataset captured in a real-world roundabout scenario. It is designed to support the development and benchmarking of object detection, single-camera tracking (SCT), and multi-camera vehicle tracking (MCVT) algorithms in urban environments with nonlinear motion and frequent occlusions.
 
@@ -41,6 +41,12 @@ RoundaboutHD/
 │   │   └── labels_xy.zip/
 │   ├── SCT/
 │   │   └── imagesc001_SCT_GT.txt
+│   ├── geo-mapping/
+│   │   ├── cam01_fitted_cam.json
+│   │   ├── cam01_info.png
+│   │   ├── cam01_topview.jpg
+│   │   ├── cam01_trace.png
+│   │   └── cam01_undistorted.png
 │   └── video.mp4
 ├── imagesc002/
 ├── imagesc003/
@@ -50,17 +56,19 @@ RoundaboutHD/
 │       ├── query_images/
 │       ├── test_images/
 │       └── train_images/
-└── Multi_CAM_Ground_Truth.txt
+├── Multi_CAM_Ground_Truth.txt
+└── vehicle_statistic.xlsx
 ```
 In this dataset, it contains:
 - **Labeled video footage** 
 - **Object detection Ground Turth**
 - **Single-camera tracking (SCT) Ground Turth**
+- **camera modelling parameter and visualization**
 - **RoundaboutHD image-based ReID subset**
 - **Image-based ReID Ground Turth**
 - **Multi-camera tracking (MCVT) Ground Turth**
+- **Vehicle context information**
 - **Evaluation scripts and label format documentation**
-
 ---
 
 ## Evaluation
@@ -130,12 +138,32 @@ Each file must contain object detections in the format:
 > *Note: The value of `class_id` do not influence the results for object detection evaluation.
 
 ---
+## Baseline
+
+We evaluate our dataset using **ELECTRICITY** [1], a general and reproducible MCVT method. We set the **distance threshold** to **12** and apply a **hard removal distance** of **80**. Static vehicle trajectories are removed. The result is shown below:
+
+| Dataset           | IDF1  | IDP   | IDR   |
+|-------------------|-------|-------|-------|
+| **RoundaboutHD**  | 28.14 | 26.45 | 30.06 |
+
+---
 
 ## Citation
 
-If you use **RoundaboutHD** in your research, please cite the following:
+If you use **RoundaboutHD** in your research, please cite:
 
-> **Yuqiang Lin**, **Sam Lockyer**, **Mingxuan Sui**, and **Nic Zhang**  
-> *RoundaboutHD: A High-Resolution Benchmark Dataset for Real-World Multi-Camera Vehicle Tracking*  
-> arXiv preprint arXiv:XXXX.XXXXX, 2025.  
-> [URL to be updated after arXiv submission]
+```
+@misc{lin2025roundabouthdhighresolutionrealworldurban,
+      title={RoundaboutHD: High-Resolution Real-World Urban Environment Benchmark for Multi-Camera Vehicle Tracking}, 
+      author={Yuqiang Lin and Sam Lockyer and Mingxuan Sui and Li Gan and Florian Stanek and Markus Zarbock and Wenbin Li and Adrian Evans and Nic Zhang},
+      year={2025},
+      eprint={2507.08729},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2507.08729}, 
+}
+```
+
+---
+
+[1] Y. Qian et al., "ELECTRICITY: An Efficient Multi-Camera Vehicle Tracking System for Intelligent City", CVPRW, 2020.
