@@ -1,5 +1,7 @@
 # RoundaboutHD:High-Resolution Real-World Urban Environment Benchmark for Multi-Camera Vehicle Tracking
 
+[![Paper](http://img.shields.io/badge/paper-arXiv%3A2507.08729-B31B1B.svg)](https://arxiv.org/abs/2507.08729)
+
 **RoundaboutHD** is a comprehensive, high-resolution multi-camera vehicle tracking (MCVT) dataset captured in a real-world roundabout scenario. It is designed to support the development and benchmarking of object detection, single-camera tracking (SCT), and multi-camera vehicle tracking (MCVT) algorithms in urban environments with nonlinear motion and frequent occlusions.
 
 <p align="center">
