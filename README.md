@@ -17,10 +17,11 @@
 
 ## Dataset Access
 
-To request access to the dataset, please email your **full name** and **institutional affiliation** to: **yl4300@bath.ac.uk**. The dataset is available for **non-commercial research purposes only**. It will also be published through the **University of Bath Research Data Archive** in the near future.
+(24/07/2025) The dataset is now available on Hugging Face[![dataset](https://img.shields.io/badge/dataset-HuggingFace-ffcc00.svg)](https://huggingface.co/datasets/yl4300/RoundaboutHD).
+
+It will also be published through the **University of Bath Research Data Archive** in the near future.
 
 ---
-
 
 ## Dataset Description
 
