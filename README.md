@@ -19,7 +19,7 @@
 
 (24/07/2025) The dataset is now available on Hugging Face[![dataset](https://img.shields.io/badge/dataset-HuggingFace-ffcc00.svg)](https://huggingface.co/datasets/yl4300/RoundaboutHD).
 
-It will also be published through the **University of Bath Research Data Archive** in the near future.
+(07/08/2025) The dataset is now available on [University of Bath Research Data Archive](https://researchdata.bath.ac.uk/1574/).
 
 ---
 
