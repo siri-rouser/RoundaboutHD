@@ -90,7 +90,7 @@ We provide tools for evaluating tracking performance in this repository:
 Use the following command:
 
 ```bash
-python eval_label.py <prediction_file> <ground_truth_file>
+python eval_label.py <ground_truth_file> <prediction_file> 
 ```
 
 Each line in the prediction/ground-truth file should follow this format:
