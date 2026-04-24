@@ -2,9 +2,9 @@
 
 [![Paper](http://img.shields.io/badge/paper-arXiv%3A2507.08729-B31B1B.svg)](https://arxiv.org/abs/2507.08729)
 
-**News(21/07/2025):**
+**News(30/09/2025):**
 
- We have submitted this paper to [WACV 2026](https://wacv.thecvf.com/).
+This paper is currently under reviewing by Journal of Intelligent Transportation Systems.
  
  ---
 
@@ -149,11 +149,13 @@ Each file must contain object detections in the format:
 ---
 ## Baseline
 
-We evaluate our dataset using **ELECTRICITY** [1], a general and reproducible MCVT method. We set the **distance threshold** to **12** and apply a **hard removal distance** of **80**. Static vehicle trajectories are removed. The result is shown below:
+We evaluate our dataset using **ELECTRICITY** [1], a general and reproducible MCVT method. We set the **distance threshold** to **12** and apply a **hard removal distance** of **80**. Static vehicle trajectories are removed. We also report two additional baselines: **AIC21-MCVT** [2] and **AIC22-MCVT** [3] by using their default parameters. The results are shown below:
 
-| Dataset           | IDF1  | IDP   | IDR   |
-|-------------------|-------|-------|-------|
-| **RoundaboutHD**  | 28.14 | 26.45 | 30.06 |
+| Method        | IDF1  | IDP   | IDR   |
+|---------------|-------|-------|-------|
+| ELECTRICITY   | 28.14 | 26.45 | 30.06 |
+| AIC21-MCVT    | 36.92 | 36.54 | 37.30 |
+| AIC22-MCVT    | 45.19 | 37.00 | 58.04 |
 
 ---
 
@@ -176,3 +178,7 @@ If you use **RoundaboutHD** in your research, please cite:
 ---
 
 [1] Y. Qian et al., "ELECTRICITY: An Efficient Multi-Camera Vehicle Tracking System for Intelligent City", CVPRW, 2020.
+
+[2] C. Liu et al., "City-scale Multi-Camera Vehicle Tracking Guided by Crossroad Zones", CVPR, 2021.
+
+[3] F. Li et al., "Multi-Camera Vehicle Tracking System for AI City Challenge 2022", CVPR, 2022.
